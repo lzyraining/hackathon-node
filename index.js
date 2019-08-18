@@ -31,6 +31,7 @@ app.get('/', (req, res, next) => {
 
 app.get('/lookup', (req, res, next) => {
     const preference = req.query.preference;
+    const format = req.query.format
     var options = {
         method: 'GET',
         url: `https://api.tealiumiq.com/v2/visitor/accounts/${config.account}/profiles/${config.profile}`,
@@ -63,9 +64,13 @@ app.get('/lookup', (req, res, next) => {
             'views': {...data["visitor"]["metric_sets"]["Category"]}
         } 
         console.log(category);
-        return res.render('index', {
-            category: category
-        });
+        if (format === 'json') {
+            res.json(category)
+        } else {
+            return res.render('index', {
+                category: category
+            });
+        }
     });
 })
 
