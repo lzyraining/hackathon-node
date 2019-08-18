@@ -9,10 +9,17 @@ select {
 }
 
 .dropdownList {
-    border: 2px black solid;
     width: 40vw;
-    padding: 20px;
+    padding: 10px;
     margin: 0 auto;
     text-align: center;
 }
 
+img {
+    display: block;
+    margin: 0 auto;
+    width: 95vw;
+    height: auto;
+    border-radius: 2px;
+
+}
