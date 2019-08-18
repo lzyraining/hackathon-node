@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/pref.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="/styles/style.css">
@@ -13,7 +14,11 @@
         <h1>your preferences</h1>
     </header>
 
- 
+    <% if (category != null) { %>
+        <image src="/images/<%= category.top3[0] %>.jpg" alt="<%= category.top3[0] %>">
+    <%} else { %>
+        <image src="/images/Women.jpg" alt="Women.jpg">
+    <%}%>
     <div class="dropdownList">
             <strong><p>What is your main interest right now?</p></strong>
             <form action="/lookup" method="GET">
@@ -21,9 +26,7 @@
                 </select>
                 <button id="submit-button">Submit</button>
         </form>
-
     </div>
-
   
   <script src="/main.js" charset="utf-8"></script>
 </body>

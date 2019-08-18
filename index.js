@@ -24,7 +24,9 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res, next) => {
-    res.render('index');
+    res.render('index', {
+        category: null
+    });
 })
 
 app.get('/lookup', (req, res, next) => {
@@ -61,7 +63,7 @@ app.get('/lookup', (req, res, next) => {
             'views': {...data["visitor"]["metric_sets"]["Category"]}
         } 
         console.log(category);
-        return res.render('preference', {
+        return res.render('index', {
             category: category
         });
     });
