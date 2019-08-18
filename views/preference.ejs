@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/pref.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+    <h2>Your interests, updated and ranked!</h2>
+    <h3>Your Top 3:</h3>
+
     <% for (let top of category.top3) { %>
         <li><%= top %></li>
     <% } %>
-
+<br><hr>
     <% let keys = Object.keys(category.views) %>
     <% for (let key of keys) { %>
         <li><%= key %> : <%= category.views[key] %>  </li>
     <% } %>
+    </div>
 </body>
 </html>

@@ -1,13 +1,18 @@
-
-
-div.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
+body {
+    font-family: 'Robot', sans-serif;
 }
 
-div.container > div {
-    height: 300px;
-    width: 400px;
-    background: gray;
+
+
+select {
+    border: 1px rgb(0, 34, 63) solid;
 }
+
+.dropdownList {
+    border: 2px black solid;
+    width: 40vw;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
