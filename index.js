@@ -60,12 +60,15 @@ app.get('/lookup', (req, res, next) => {
             'top3': top3WithPreferences,
             'views': {...data["visitor"]["metric_sets"]["Category"]}
         } 
-        res.json(category);
+        console.log(category);
+        return res.render('preference', {
+            category: category
+        });
     });
 })
 
 const calculateNewTop3Categories = (categories, preference, preferenceWeight) => {
-    if (preference == null) {
+    if (preference === "None") {
         return categories;
     }
     const index = categories.indexOf(preference);
