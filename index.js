@@ -63,7 +63,9 @@ app.get('/lookup', (req, res, next) => {
             'top3': top3WithPreferences,
             'views': {...data["visitor"]["metric_sets"]["Category"]}
         } 
+        console.log("******************************")
         console.log(category);
+        console.log("******************************")
         if (format === 'json') {
             res.json(category)
         } else {
