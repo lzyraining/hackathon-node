@@ -2,8 +2,11 @@ const express = require('express');
 const auth = require('./auth')
 const config = require('./config')
 const request = require('request')
+const path = require('path');
 
 const app = express();
+
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 let token = null;
 
@@ -14,10 +17,10 @@ app.use((req, res, next) => {
     }, err => {
         console.log(err);
     })
-});
+})
 
 app.get('/', (req, res, next) => {
-    res.json({"status": "success"})
+    res.render('index');
 })
 
 app.get('/lookup', (req, res, next) => {
