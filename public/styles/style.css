@@ -1,0 +1,13 @@
+
+
+div.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+div.container > div {
+    height: 300px;
+    width: 400px;
+    background: gray;
+}
